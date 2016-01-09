@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require "multi_json"
+require_relative "../lib_ruby/audit"
+
+puts MultiJson.dump Vile::Plugin::BundlerAudit.check

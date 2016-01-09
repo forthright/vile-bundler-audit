@@ -12,10 +12,11 @@ let to_json = (string) =>
 let to_message = (advisory) => {
   let title = advisory.title
   let gem = advisory.gem
+  if (!gem) return title
+
   let version = advisory.version
   let gem_info = gem ? `${gem} v${version} ` : ""
-  let id = ""
-  if (gem) id = advisory.cve ? `CVE-${advisory.cve}` : `OSV-${advisory.osvdb}`
+  let id = advisory.cve ? `CVE-${advisory.cve}` : `OSV-${advisory.osvdb}`
   let id_info = id ? `(${id})\n` : ""
   let patched = _.get(advisory, "patched_versions", []).join(", ")
   let unaffected = _.get(advisory, "unaffected_versions", []).join(", ")

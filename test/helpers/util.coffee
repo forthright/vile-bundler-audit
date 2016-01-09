@@ -24,8 +24,7 @@ issues = [
   }
   {
     file: "Gemfile",
-    msg: "Insecure Source URI: http://foo.bar\n" +
-          "Patched: not yet\nUnaffected: none",
+    msg: "Insecure Source URI: http://foo.bar",
     type: "warn",
     where: { end: {}, start: {} },
     data: {}

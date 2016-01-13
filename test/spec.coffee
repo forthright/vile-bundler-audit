@@ -7,7 +7,7 @@ vile = mimus.get bundler_audit, "vile"
 expect = chai.expect
 
 BUNDLE_AUDIT_TO_JSON = path.normalize path.join(
-  __dirname, "..", "bin", "bundle-audit-to-json"
+  __dirname, "..", "lib_ruby", "bundle_audit_to_json.rb"
 )
 
 # TODO: write system tests for spawn -> cli -> bundler
@@ -40,7 +40,7 @@ describe "bundler-audit", ->
         .should.be.fulfilled.notify ->
           setTimeout ->
             vile.spawn.should.have.been.calledWith(
-              BUNDLE_AUDIT_TO_JSON,
-              args: [ "check" ]
+              "ruby",
+              args: [ BUNDLE_AUDIT_TO_JSON, "check" ]
             )
             done()

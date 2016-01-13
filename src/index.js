@@ -3,7 +3,7 @@ let _ = require("lodash")
 let vile = require("@brentlintner/vile")
 const Gemfile = "Gemfile"
 const bundle_audit_to_json = path.join(
-  __dirname, "..", "bin", "bundle-audit-to-json"
+  __dirname, "..", "lib_ruby", "bundle_audit_to_json.rb"
 )
 
 let to_json = (string) =>
@@ -45,7 +45,7 @@ let into_vile_issues = (advisories) =>
 
 let bundle_audit = () =>
   vile
-    .spawn(bundle_audit_to_json, { args: [ "check" ] })
+    .spawn("ruby", { args: [ bundle_audit_to_json, "check" ] })
     .then((stdout) => stdout ? to_json(stdout) : [])
 
 let punish = (plugin_data) =>

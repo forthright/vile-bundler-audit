@@ -122,7 +122,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bundler-audit (~> 0.4.0)
-  manowar
+  manowar (~> 0.0.1)
   multi_json (~> 1.11.2)
   pry
   pry-byebug

@@ -41,7 +41,8 @@ This project is currently written in Ruby and JavaScript.
 
 - `bin` houses any shell based scripts
 - `src` is es6+ syntax compiled with [babel](https://babeljs.io)
-- `lib` ruby shim code and generated js library
+- `lib` generated js library
+- `lib_ruby` ruby shim code
 
 ## Hacking
 

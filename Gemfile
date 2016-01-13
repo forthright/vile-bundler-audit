@@ -5,7 +5,6 @@ ruby "2.3.0"
 group :default do
   gem "bundler-audit", "~> 0.4.0"
   gem "multi_json", "~> 1.11.2"
-  gem "manowar", "~> 0.0.1"
 end
 
 group :development do

@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib_ruby"))
+
 require "multi_json"
-require_relative "../lib_ruby/audit"
+require "audit"
 
 puts MultiJson.dump Vile::Plugin::BundlerAudit.check

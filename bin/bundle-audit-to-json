@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib_ruby"))
-
 require "multi_json"
 require "audit"
 

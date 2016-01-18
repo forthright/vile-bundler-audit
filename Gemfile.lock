@@ -38,7 +38,6 @@ GEM
       sexp_processor (~> 4.4)
     ice_nine (0.11.1)
     json (1.8.3)
-    manowar (0.0.1)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
@@ -122,7 +121,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   bundler-audit (~> 0.4.0)
-  manowar (~> 0.0.1)
   multi_json (~> 1.11.2)
   pry
   pry-byebug

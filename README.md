@@ -1,4 +1,4 @@
-# vile-bundler-audit
+# vile-bundler-audit [![Circle CI](https://circleci.com/gh/brentlintner/vile-bundler-audit.svg?style=svg&circle-token=3b75ecc1b75f4ec0dfe397388cf40f3594c2944b)](https://circleci.com/gh/brentlintner/vile-bundler-audit)
 
 A [vile](http://github.com/brentlintner/vile) plugin for
 [bundler-audit]().

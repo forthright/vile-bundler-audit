@@ -15,33 +15,53 @@ let to_message = (advisory) => {
   if (!gem) return title
 
   let version = advisory.version
-  let gem_info = gem ? `${gem} v${version} ` : ""
+  let gem_info = `${gem} v${version} `
   let id = advisory.cve ? `CVE-${advisory.cve}` : `OSV-${advisory.osvdb}`
-  let id_info = id ? `(${id})\n` : ""
+  let id_info = `${gem_info}(${id})\n`
   let patched = _.get(advisory, "patched_versions", []).join(", ")
   let unaffected = _.get(advisory, "unaffected_versions", []).join(", ")
-  return `${gem_info}${id_info}` +
+  return `${id_info}` +
           `${title}\n` +
           `Patched: ${patched || "not yet"}\n` +
           `Unaffected: ${unaffected || "none"}`
 }
 
-let is_source_uri_warning = (advisory) =>
-  !_.has(advisory, "gem")
+let is_package_warning = (advisory) =>
+  _.has(advisory, "gem")
 
-// TODO: use vile.DEPENDENCY when available
-let issue_type = (advisory) =>
-  is_source_uri_warning(advisory) ?
-    vile.WARNING : vile.ERROR
+let signature = (advisory) =>
+  is_package_warning(advisory) ?
+    `bundler-audit::${advisory.gem}::${advisory.version}::` +
+      `${advisory.cve || advisory.osvdb || advisory.title}` :
+    `bundler-audit::${advisory.title}`
+
+let link_or_id = (advisory) =>
+  _.get(advisory, "url",
+    _.get(advisory, "cve",
+      _.get(advisory, "osvdb")))
 
 let into_vile_issues = (advisories) =>
-  advisories.map((advisory) =>
-    vile.issue(
-      issue_type(advisory),
-      Gemfile,
-      to_message(advisory)
-    )
-  )
+  advisories.map((advisory) => {
+    let struct = {
+      type: vile.SEC,
+      path: Gemfile,
+      message: to_message(advisory),
+      title: _.get(advisory, "title"),
+      signature: signature(advisory)
+    }
+
+    if (is_package_warning(advisory)) {
+      _.merge(struct, {
+        package: _.get(advisory, "gem"),
+        version: _.get(advisory, "version"),
+        advisory: link_or_id(advisory),
+        patched: _.get(advisory, "patched_versions", []),
+        unaffected: _.get(advisory, "unaffected_versions", []),
+      })
+    }
+
+    return vile.issue(struct)
+  })
 
 let bundle_audit = () =>
   vile

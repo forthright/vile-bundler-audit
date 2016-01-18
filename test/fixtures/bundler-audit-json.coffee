@@ -5,7 +5,7 @@ module.exports = [
     "title": "Issue with libxml2",
     "url": "https://groups.google.com/forum/...",
     "cve": "2015-5312",
-    "osvdb": null,
+    "osvdb": undefined,
     "patched_versions": [">= 1.6.7.1"],
     "unaffected_versions": ["< 1.6.0", "1.4.0"]
   }
@@ -13,9 +13,15 @@ module.exports = [
     "gem": "fubar",
     "version": "1.0.0",
     "title": "You are screwed",
-    "url": "http://abc.com",
-    "cve": null,
-    "osvdb": "something",
+    "cve": undefined,
+    "osvdb": "osvdb-id",
+    "patched_versions": [],
+    "unaffected_versions": []
+  }
+  {
+    "gem": "no-ids",
+    "version": "1.0.0",
+    "title": "Some title",
     "patched_versions": [],
     "unaffected_versions": []
   }

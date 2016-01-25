@@ -52,11 +52,13 @@ let into_vile_issues = (advisories) =>
 
     if (is_package_warning(advisory)) {
       _.merge(struct, {
-        package: _.get(advisory, "gem"),
-        version: _.get(advisory, "version"),
-        advisory: link_or_id(advisory),
-        patched: _.get(advisory, "patched_versions", []),
-        unaffected: _.get(advisory, "unaffected_versions", []),
+        security: {
+          package: _.get(advisory, "gem"),
+          version: _.get(advisory, "version"),
+          advisory: link_or_id(advisory),
+          patched: _.get(advisory, "patched_versions", []),
+          unaffected: _.get(advisory, "unaffected_versions", []),
+        }
       })
     }
 

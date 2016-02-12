@@ -1,6 +1,6 @@
 let path = require("path")
 let _ = require("lodash")
-let vile = require("@brentlintner/vile")
+let vile = require("@forthright/vile")
 const Gemfile = "Gemfile"
 const bundle_audit_to_json = path.join(
   __dirname, "..", "lib_ruby", "bundle_audit_to_json.rb"

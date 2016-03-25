@@ -105,8 +105,9 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
-  bundler-audit (~> 0.5.0)
-  multi_json (~> 1.11.2)
+  bundler (~> 1.11)
+  bundler-audit (~> 0.5)
+  multi_json (~> 1.11)
   pry
   pry-byebug
   reek

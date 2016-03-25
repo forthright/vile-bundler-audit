@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 echo "Installing ruby support..."
 
-bundle --with default
+bundle --without development
 
 if [ "$?" -gt 0 ]; then
   echo "ERROR! Ruby setup failed. Do you have Bundler installed?"

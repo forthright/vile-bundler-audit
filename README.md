@@ -1,7 +1,8 @@
 # vile-bundler-audit [![Circle CI](https://circleci.com/gh/brentlintner/vile-bundler-audit.svg?style=svg&circle-token=3b75ecc1b75f4ec0dfe397388cf40f3594c2944b)](https://circleci.com/gh/brentlintner/vile-bundler-audit)
 
-A [vile](http://github.com/brentlintner/vile) plugin for
-[bundler-audit]().
+[![score-badge](http://vile.io/brentlintner/vile-bundler-audit/badges/score?token=zkyXkybvCV1yQy1p3CmY)](http://vile.io/brentlintner/vile-bundler-audit) [![security-badge](http://vile.io/brentlintner/vile-bundler-audit/badges/security?token=zkyXkybvCV1yQy1p3CmY)](http://vile.io/brentlintner/vile-bundler-audit) [![coverage-badge](http://vile.io/brentlintner/vile-bundler-audit/badges/coverage?token=zkyXkybvCV1yQy1p3CmY)](http://vile.io/brentlintner/vile-bundler-audit) [![dependency-badge](http://vile.io/brentlintner/vile-bundler-audit/badges/dependency?token=zkyXkybvCV1yQy1p3CmY)](http://vile.io/brentlintner/vile-bundler-audit)
+
+A [vile](http://github.com/brentlintner/vile) plugin for [bundler-audit](https://github.com/rubysec/bundler-audit).
 
 ## Requirements
 

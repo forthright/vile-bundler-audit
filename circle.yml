@@ -11,3 +11,5 @@ test:
   override:
     - npm run test-ruby
     - npm run test-cov
+  post:
+    - npm run vile

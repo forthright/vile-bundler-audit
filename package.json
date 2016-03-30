@@ -22,7 +22,7 @@
     "test-all": "npm test && npm run test-ruby",
     "test-cov": "bin/test-cov",
     "test-ruby": "rspec test/*.rb",
-    "vile": "vile -cpd --nodecorations"
+    "vile": "vile -cpisd --nodecorations"
   },
   "keywords": [
     "vile",
@@ -33,7 +33,7 @@
     "ruby"
   ],
   "dependencies": {
-    "@forthright/vile": "~0.5.19",
+    "@forthright/vile": "~0.5.21",
     "bluebird": "~3.3.4",
     "lodash": "^3.10.1"
   },
@@ -46,7 +46,7 @@
     "@forthright/vile-eslint": "0.1.3",
     "@forthright/vile-fs-lint": "^0.3.2",
     "@forthright/vile-git": "^0.2.2",
-    "@forthright/vile-jshint": "0.2.2",
+    "@forthright/vile-jshint": "0.2.3",
     "@forthright/vile-language": "0.1.4",
     "@forthright/vile-license": "0.3.3",
     "@forthright/vile-ncu": "0.1.5",

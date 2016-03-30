@@ -15,6 +15,7 @@ vile:
       ".fs-lint",
       ".jshintrc",
       ".jshintignore",
+      ".git",
       ".gitignore",
       ".npmrc",
       "README.md",

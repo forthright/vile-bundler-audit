@@ -44,6 +44,7 @@ issues = [
           "\nPatched: not yet\nUnaffected: none"
     type: "security"
     security: {
+      advisory: undefined,
       package: "no-ids"
       version: "1.0.0"
       patched: []
@@ -52,7 +53,6 @@ issues = [
   }
   {
     path: "Gemfile"
-    advisory: undefined,
     title: "Insecure Source URI: http://foo.bar"
     signature: "bundler-audit::Insecure Source URI: http://foo.bar"
     message: "Insecure Source URI: http://foo.bar"

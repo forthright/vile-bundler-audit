@@ -52,6 +52,7 @@ issues = [
   }
   {
     path: "Gemfile"
+    advisory: undefined,
     title: "Insecure Source URI: http://foo.bar"
     signature: "bundler-audit::Insecure Source URI: http://foo.bar"
     message: "Insecure Source URI: http://foo.bar"

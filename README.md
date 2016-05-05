@@ -24,16 +24,11 @@ Note: A good strategy is to use [bundler](http://bundler.io).
 
 ## Config
 
-**TODO**
-
 ```yml
 bundler-audit:
   config:
-    update_db: false
-    gemfile: alternative/path/Gemfile
-    path: different/bundler/path
-    retry: 3
-    ignore: ["one", "two", "three"]
+    update_db: true # defaults to false
+    ignore_advisories: [ ".." ]
 ```
 
 ## Architecture

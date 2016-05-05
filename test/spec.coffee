@@ -41,6 +41,25 @@ describe "bundler-audit", ->
           setTimeout ->
             vile.spawn.should.have.been.calledWith(
               "ruby",
-              args: [ BUNDLE_AUDIT_TO_JSON, "check" ]
-            )
+              args: [ BUNDLE_AUDIT_TO_JSON, "false", "" ])
+            done()
+
+    it "passes the update_db option", (done) ->
+      bundler_audit
+        .punish config: update_db: true
+        .should.be.fulfilled.notify ->
+          setTimeout ->
+            vile.spawn.should.have.been.calledWith(
+              "ruby",
+              args: [ BUNDLE_AUDIT_TO_JSON, "true", "" ])
+            done()
+
+    it "passes the ignore list", (done) ->
+      bundler_audit
+        .punish config: ignore_advisories: [ "foo", "bar" ]
+        .should.be.fulfilled.notify ->
+          setTimeout ->
+            vile.spawn.should.have.been.calledWith(
+              "ruby",
+              args: [ BUNDLE_AUDIT_TO_JSON, "false", "foo,bar" ])
             done()

@@ -1,7 +1,6 @@
 require "bundler/audit/scanner"
 
 # TODO: support ignoring advisories
-# TODO: support updating database automatically
 # TODO: submit JSON format output to bundler-audit gem and remove this
 module Vile
   module Plugin
@@ -9,13 +8,20 @@ module Vile
       extend self
 
       def check
-        bundler_audit
+        update_audit_database if update_db?
+        audit
       end
 
-      private_class_method def bundler_audit
+      private_class_method def update_audit_database
+        if Bundler::Audit::Database.update! == false
+          raise Exception.new "Failed updating ruby-advisory-db!"
+        end
+      end
+
+      private_class_method def audit
         issues = []
 
-        Bundler::Audit::Scanner.new.scan do |result|
+        Bundler::Audit::Scanner.new.scan(ignore: ignore_advisories) do |result|
           case result
           when Bundler::Audit::Scanner::InsecureSource
             issues.push source_uri_issue(result)
@@ -25,6 +31,14 @@ module Vile
         end
 
         issues
+      end
+
+      private_class_method def update_db?
+        ARGV[0] == "true"
+      end
+
+      private_class_method def ignore_advisories
+        ARGV[1].to_s.split(",") || []
       end
 
       private_class_method def source_uri_issue result

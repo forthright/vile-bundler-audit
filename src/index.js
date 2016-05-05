@@ -1,10 +1,14 @@
 let path = require("path")
 let _ = require("lodash")
 let vile = require("@forthright/vile")
+
 const Gemfile = "Gemfile"
 const bundle_audit_to_json = path.join(
   __dirname, "..", "lib_ruby", "bundle_audit_to_json.rb"
 )
+
+const BEFORE_JSON = /^[^\[]*/gi
+const AFTER_JSON = /[^\]]*$/gi
 
 let to_json = (string) =>
   _.attempt(JSON.parse.bind(null, string))
@@ -65,13 +69,30 @@ let into_vile_issues = (advisories) =>
     return vile.issue(struct)
   })
 
-let bundle_audit = () =>
-  vile
-    .spawn("ruby", { args: [ bundle_audit_to_json, "check" ] })
-    .then((stdout) => stdout ? to_json(stdout) : [])
+// HACK: seems there is some logging inside bundle-audit
+let sanitize_invalid_json_output = (stdout) =>
+  stdout.replace(BEFORE_JSON, "")
+        .replace(AFTER_JSON, "")
+
+let bundle_audit = (plugin_config) => {
+  let update_db = _.get(plugin_config, "update_db", false)
+  let ignore_advisories = _.get(plugin_config, "ignore_advisories", [])
+  let args = [
+    bundle_audit_to_json,
+    update_db.toString(),
+    ignore_advisories.join(",")
+  ]
+  return vile
+    .spawn("ruby", { args: args })
+    .then((stdout) => {
+      stdout = sanitize_invalid_json_output(stdout)
+      let issues = stdout ? to_json(stdout) : []
+      return issues
+    })
+}
 
 let punish = (plugin_data) =>
-  bundle_audit()
+  bundle_audit(_.get(plugin_data, "config", {}))
     .then(into_vile_issues)
 
 module.exports = {

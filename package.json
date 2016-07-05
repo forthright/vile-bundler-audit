@@ -22,7 +22,8 @@
     "test-all": "npm test && npm run test-ruby",
     "test-cov": "bin/test-cov",
     "test-ruby": "rspec test/*.rb",
-    "vile": "vile p -usi --nodecorations"
+    "vile": "vile p -usi --nodecorations",
+    "release-it": "release-it"
   },
   "keywords": [
     "vile",

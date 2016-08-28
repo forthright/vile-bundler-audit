@@ -43,6 +43,7 @@ describe "bundler-audit", ->
               "ruby",
               args: [ BUNDLE_AUDIT_TO_JSON, "false", "" ])
             done()
+      return
 
     it "passes the update_db option", (done) ->
       bundler_audit
@@ -53,6 +54,7 @@ describe "bundler-audit", ->
               "ruby",
               args: [ BUNDLE_AUDIT_TO_JSON, "true", "" ])
             done()
+      return
 
     it "passes the ignore list", (done) ->
       bundler_audit
@@ -63,3 +65,4 @@ describe "bundler-audit", ->
               "ruby",
               args: [ BUNDLE_AUDIT_TO_JSON, "false", "foo,bar" ])
             done()
+      return

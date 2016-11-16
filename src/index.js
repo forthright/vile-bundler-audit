@@ -84,8 +84,8 @@ let bundle_audit = (plugin_config) => {
   ]
   return vile
     .spawn("ruby", { args: args })
-    .then((stdout) => {
-      stdout = sanitize_invalid_json_output(stdout)
+    .then((data) => {
+      let stdout = sanitize_invalid_json_output(_.get(data, "stdout", ""))
       let issues = stdout ? to_json(stdout) : []
       return issues
     })

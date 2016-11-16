@@ -3,7 +3,11 @@ bundler_audit_json = require "./../fixtures/bundler-audit-json"
 
 setup = (vile) ->
   vile.spawn.returns new Promise (resolve) ->
-    resolve(JSON.stringify bundler_audit_json)
+    resolve({
+      code: 0
+      stdout: JSON.stringify bundler_audit_json
+      stderr: ""
+    })
 
 issues = [
   {

@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-ruby "2.3.1"
-
 group :default do
   gem "bundler-audit", "~> 0.5"
   gem "bundler", "~> 1.11"

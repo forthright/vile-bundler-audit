@@ -1,6 +1,8 @@
 machine:
   node:
     version: 6.9.1
+  ruby:
+    version: 2.3.3
 
 checkout:
   post:
@@ -20,4 +22,4 @@ test:
     - npm run test-ruby
     - npm run test-cov
   post:
-    - npm run vile
+    - bundle exec npm run vile

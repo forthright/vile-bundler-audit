@@ -8,6 +8,9 @@ checkout:
     - git checkout -f $CIRCLE_BRANCH
 
 dependencies:
+  pre:
+    - gem install bundler
+    - gem update --system
   post:
     - npm run compile
     - npm run compile-dev

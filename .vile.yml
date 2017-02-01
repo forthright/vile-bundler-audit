@@ -38,6 +38,7 @@ depcheck:
     ignore_dirs:
       - src
       - typings
+      - vendor
       - node_modules
       - coverage
       - tmp

@@ -1,4 +1,4 @@
-require "multi_json"
+require "json"
 require_relative "audit"
 
-puts MultiJson.dump Vile::Plugin::BundlerAudit.check
+puts JSON.dump Vile::Plugin::BundlerAudit.check

@@ -3,7 +3,6 @@ source "https://rubygems.org"
 group :default do
   gem "bundler-audit", "~> 0.5"
   gem "bundler", "~> 1.11"
-  gem "multi_json", "~> 1.11"
 end
 
 group :development do

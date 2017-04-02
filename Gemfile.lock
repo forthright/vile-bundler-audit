@@ -38,7 +38,6 @@ GEM
     launchy (2.4.3)
       addressable (~> 2.3)
     method_source (0.8.2)
-    multi_json (1.12.1)
     parser (2.4.0.0)
       ast (~> 2.2)
     path_expander (1.0.1)
@@ -111,7 +110,6 @@ DEPENDENCIES
   awesome_print
   bundler (~> 1.11)
   bundler-audit (~> 0.5)
-  multi_json (~> 1.11)
   pry
   pry-byebug
   reek

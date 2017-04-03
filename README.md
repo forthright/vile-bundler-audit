@@ -44,5 +44,6 @@ This project is currently written in Ruby and JavaScript.
 
     cd vile-bundler-audit
     npm install
+    gem install rspec
     npm run dev
     npm test-all

@@ -12,6 +12,7 @@ checkout:
 dependencies:
   pre:
     - gem install bundler
+    - gem install rspec
     - gem update --system
   post:
     - npm run compile

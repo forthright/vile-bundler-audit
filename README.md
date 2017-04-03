@@ -9,7 +9,7 @@ A [vile](http://github.com/brentlintner/vile) plugin for [bundler-audit](https:/
 - [nodejs](http://nodejs.org)
 - [npm](http://npmjs.org)
 - [ruby](http://ruby-lang.org)
-- [rubygems](http://rubygems.org)
+- [bundler](http://bundler.io)
 
 ## Installation
 
@@ -24,7 +24,7 @@ Note: A good strategy is to use [bundler](http://bundler.io).
 
 ## Config
 
-```yml
+```yaml
 bundler-audit:
   config:
     update_db: true # defaults to false

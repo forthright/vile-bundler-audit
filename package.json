@@ -13,11 +13,9 @@
     "README.md"
   ],
   "scripts": {
-    "bundle": "bin/bundle-rb-gems",
     "compile": "babel -d lib -m common src",
     "compile-dev": "bin/compile-dev",
     "dev": "bin/dev",
-    "postinstall": "npm run bundle",
     "test": "bin/test",
     "test-all": "npm test && npm run test-ruby",
     "test-cov": "bin/test-cov",
@@ -39,8 +37,6 @@
   },
   "devDependencies": {
     "@forthright/vile": "^0.12.0",
-    "@forthright/vile-bundler-audit": ">=0.3.2",
-    "@forthright/vile-bundler-outdated": ">=0.1.1",
     "@forthright/vile-coffeelint": ">=0.1.14",
     "@forthright/vile-comment": ">=0.1.17",
     "@forthright/vile-coverage": ">=0.2.14",

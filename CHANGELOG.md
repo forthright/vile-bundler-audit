@@ -1,5 +1,5 @@
 # Changelog
 
-## May 05, 2017 - v0.3.3
+## May 01, 2017 - v0.3.4
 
 * Open sourced.

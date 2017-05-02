@@ -1,6 +1,6 @@
 let path = require("path")
 let _ = require("lodash")
-let vile = require("@forthright/vile")
+let vile = require("vile")
 
 const Gemfile = "Gemfile"
 const bundle_audit_to_json = path.join(

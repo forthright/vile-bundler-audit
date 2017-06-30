@@ -1,5 +1,6 @@
 vile:
   ignore:
+    - LICENSE
     - coverage
     - coffeelint.json
     - .babelrc

@@ -1,15 +1,12 @@
-# vile-bundler-audit [![Circle CI](https://circleci.com/gh/forthright/vile-bundler-audit.svg?style=shield&circle-token=3b75ecc1b75f4ec0dfe397388cf40f3594c2944b)](https://circleci.com/gh/forthright/vile-bundler-audit)
+# vile-bundler-audit [![Circle CI](https://circleci.com/gh/forthright/vile-bundler-audit.svg?style=shield&circle-token=3b75ecc1b75f4ec0dfe397388cf40f3594c2944b)](https://circleci.com/gh/forthright/vile-bundler-audit) [![score-badge](https://vile.io/api/v0/projects/vile-bundler-audit/badges/score?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/vile-bundler-audit) [![security-badge](https://vile.io/api/v0/projects/vile-bundler-audit/badges/security?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/vile-bundler-audit) [![coverage-badge](https://vile.io/api/v0/projects/vile-bundler-audit/badges/coverage?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/vile-bundler-audit) [![dependency-badge](https://vile.io/api/v0/projects/vile-bundler-audit/badges/dependency?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/vile-bundler-audit)
 
-[![score-badge](https://vile.io/api/v0/projects/vile-bundler-audit/badges/score?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/vile-bundler-audit) [![security-badge](https://vile.io/api/v0/projects/vile-bundler-audit/badges/security?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/vile-bundler-audit) [![coverage-badge](https://vile.io/api/v0/projects/vile-bundler-audit/badges/coverage?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/vile-bundler-audit) [![dependency-badge](https://vile.io/api/v0/projects/vile-bundler-audit/badges/dependency?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/vile-bundler-audit)
-
-A [vile](http://github.com/brentlintner/vile) plugin for [bundler-audit](https://github.com/rubysec/bundler-audit).
+A [Vile](http://github.com/brentlintner/vile) plugin for auditing your Gemfile for
+known vulnerabilities and insecure sources (via [bundler-audit](https://github.com/rubysec/bundler-audit)).
 
 ## Requirements
 
-- [nodejs](http://nodejs.org)
-- [npm](http://npmjs.org)
-- [ruby](http://ruby-lang.org)
-- [bundler](http://bundler.io)
+- [Node.js](http://nodejs.org)
+- [Ruby](http://ruby-lang.org)
 
 ## Installation
 
@@ -19,8 +16,6 @@ Example:
 
     npm i vile-bundler-audit
     gem install bundler-audit
-
-Note: A good strategy is to use [bundler](http://bundler.io).
 
 ## Config
 
@@ -33,7 +28,7 @@ bundler-audit:
 
 ## Versioning
 
-This project ascribes to [semantic versioning](http://semver.org).
+This project uses [Semver](http://semver.org).
 
 ## Licensing
 
@@ -60,8 +55,6 @@ Even if you are uncomfortable with code, an issue or question is welcome.
 
 ### Code Of Conduct
 
-This project ascribes to [contributor-covenant.org](http://contributor-covenant.org).
-
 By participating in this project you agree to our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Maintainers
@@ -73,11 +66,11 @@ By participating in this project you agree to our [Code of Conduct](CODE_OF_COND
 This project is currently written in Ruby and JavaScript.
 
 - `bin` houses any shell based scripts
-- `src` is es6+ syntax compiled with [babel](https://babeljs.io)
+- `src` is es6+ syntax compiled with [Babel](https://babeljs.io)
 - `lib` generated js library
 - `lib_ruby` ruby shim code
 
-## Hacking
+## Developing
 
     cd vile-bundler-audit
     npm install

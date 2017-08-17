@@ -17,6 +17,10 @@ Example:
     npm i vile-bundler-audit
     gem install bundler-audit
 
+## Usage
+
+    vile a -p bundler-audit
+
 ## Config
 
 ```yaml

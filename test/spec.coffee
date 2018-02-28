@@ -7,8 +7,14 @@ vile = mimus.get bundler_audit, "vile"
 expect = chai.expect
 
 BUNDLE_AUDIT_TO_JSON = path.normalize path.join(
-  __dirname, "..", "lib_ruby", "bundle_audit_to_json.rb"
-)
+  __dirname, "..", "lib_ruby", "bundle_audit_to_json.rb")
+
+BUNDLE_AUDIT_TO_JSON_PKGD = path.normalize path.join(
+  path.dirname(process.execPath),
+  "node_modules",
+  "vile-bundler-audit",
+  "lib_ruby",
+  "bundle_audit_to_json.rb")
 
 # TODO: write system tests for spawn -> cli -> bundler
 # TODO: don't use setTimeout everywhere (for proper exception throwing)
@@ -44,6 +50,23 @@ describe "bundler-audit", ->
               args: [ BUNDLE_AUDIT_TO_JSON, "false", "" ])
             done()
       return
+
+    describe "when bundled with pkg", ->
+      beforeEach ->
+        process.pkg = { defaultEntrypoint: ".." }
+      afterEach ->
+        process.pkg = undefined
+
+      it "uses an alternative lib_ruby path", (done) ->
+        bundler_audit
+          .punish config: update_db: true
+          .should.be.fulfilled.notify ->
+            setTimeout ->
+              vile.spawn.should.have.been.calledWith(
+                "ruby",
+                args: [ BUNDLE_AUDIT_TO_JSON_PKGD, "true", "" ])
+              done()
+        return
 
     it "passes the update_db option", (done) ->
       bundler_audit
